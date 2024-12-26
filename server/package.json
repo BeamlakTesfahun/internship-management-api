@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "internship-management-platform",
+  "name": "task-management-app",
   "version": "1.0.0",
   "description": "Platform to enable admins to manage internship tasks and allow students to interact with the tasks assigned to them.",
   "main": "server.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BeamlakTesfahun/internship-management-api.git"
+    "url": "git+https://github.com/BeamlakTesfahun/task-management-app.git"
   },
   "author": "Beamlak",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BeamlakTesfahun/internship-management-api/issues"
+    "url": "https://github.com/BeamlakTesfahun/task-management-app.git/issues"
   },
-  "homepage": "https://github.com/BeamlakTesfahun/internship-management-api#readme",
+  "homepage": "https://github.com/BeamlakTesfahun/task-management-app.git#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
