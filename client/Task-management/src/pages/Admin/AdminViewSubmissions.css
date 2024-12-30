@@ -1,0 +1,150 @@
+/* AdminViewSubmissions.css */
+.admin-container {
+  padding: 20px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #1f2933;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.submission-table th,
+.submission-table td {
+  border: 1px solid #f3f4f7;
+  padding: 10px;
+  text-align: left;
+}
+
+.submission-table th {
+  background-color: #ed8f0c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.submission-table tr:nth-child(even) {
+  background-color: #f9f9fb;
+}
+
+.submission-table tr:hover {
+  background-color: #f3f4f7;
+}
+
+.feedback-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  resize: none;
+}
+
+.submit-feedback {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .submission-table th, .submission-table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .feedback-textarea {
+    height: 80px;
+  }
+
+  .submit-feedback {
+    width: 100%;
+  }
+}
+/* AdminViewSubmissions.css */
+.admin-container {
+  padding: 20px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  color: #1f2933;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.submission-table th,
+.submission-table td {
+  border: 1px solid #f3f4f7;
+  padding: 10px;
+  text-align: left;
+}
+
+.submission-table th {
+  background-color: #ed8f0c;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.submission-table tr:nth-child(even) {
+  background-color: #f9f9fb;
+}
+
+.submission-table tr:hover {
+  background-color: #f3f4f7;
+}
+
+.feedback-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  resize: none;
+}
+
+.submit-feedback {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .submission-table th, .submission-table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .feedback-textarea {
+    height: 80px;
+  }
+
+  .submit-feedback {
+    width: 100%;
+  }
+}

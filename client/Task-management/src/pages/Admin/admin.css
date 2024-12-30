@@ -1,0 +1,84 @@
+.admin-container {
+    padding: 20px;
+  }
+  
+  .create-task-button {
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .create-task-button:hover {
+    background-color: #0056b3;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .task-table {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  table td {
+    text-align: center;
+  }
+  
+  table .edit-btn, table .delete-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  table .edit-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+  }
+  
+  table .edit-btn:hover {
+    background-color: #45a049;
+  }
+  
+  table .delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+  
+  table .delete-btn:hover {
+    background-color: #e53935;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
