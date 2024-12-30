@@ -48,7 +48,7 @@ const createAdmin = async (req, res) => {
 // endpoint for admins to invite students to the platform
 const inviteUser = async (req, res) => {
   try {
-    const { email, role } = req.body;
+    const { email, role, trackId } = req.body;
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -65,6 +65,7 @@ const inviteUser = async (req, res) => {
     const user = new User({
       email,
       role,
+      track: trackId,
       inviteToken,
       inviteTokenExpires,
       isActive: false, // set the activity status as false
@@ -76,6 +77,8 @@ const inviteUser = async (req, res) => {
     const inviteUrl = `${req.protocol}://${req.get(
       "host"
     )}/auth/setup-account/${inviteToken}`;
+
+    // ?trackId=${trackId}
 
     await inviteEmail(user.email, inviteUrl);
 
@@ -118,6 +121,13 @@ const setupAccount = async (req, res) => {
 
     res.status(StatusCodes.OK).json({
       msg: "Account has been setup successfully",
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        track: user.track,
+      },
     });
   } catch (error) {
     console.error("Error occurred", error);
