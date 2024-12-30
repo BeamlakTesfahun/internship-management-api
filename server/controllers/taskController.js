@@ -129,13 +129,13 @@ const getStudentTasks = async (req, res) => {
     const student = await User.findById(userId).populate("track");
 
     if (!student) {
-      return res.status(404).json({
+      return res.status(StatusCodes.NOT_FOUND).json({
         msg: "Student not found",
       });
     }
 
     if (!student.track || student.track.length === 0) {
-      return res.status(404).json({
+      return res.status(StatusCodes.NOT_FOUND).json({
         msg: "Track not found for this student",
       });
     }
@@ -146,18 +146,20 @@ const getStudentTasks = async (req, res) => {
 
     const tasks = populatedTracks.flatMap((track) => track.tasks);
     if (tasks.length === 0) {
-      return res.status(404).json({
+      return res.status(StatusCodes.NOT_FOUND).json({
         msg: "No tasks found for this student's track",
       });
     }
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
       msg: "Tasks fetched successfully",
       tasks,
     });
   } catch (error) {
     console.error("Error fetching tasks for student:", error);
-    res.status(500).json({ msg: "Internal server error" });
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ msg: "Internal server error" });
   }
 };
 
