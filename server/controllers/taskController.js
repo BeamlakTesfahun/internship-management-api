@@ -134,12 +134,25 @@ const getStudentTasks = async (req, res) => {
       });
     }
 
-    const track = student.track;
+    if (!student.track || student.track.length === 0) {
+      return res.status(404).json({
+        msg: "Track not found for this student",
+      });
+    }
 
-    const tasks = await Task.find({ track: track._id });
+    const populatedTracks = await Track.find({
+      _id: { $in: student.track },
+    }).populate("tasks");
+
+    const tasks = populatedTracks.flatMap((track) => track.tasks);
+    if (tasks.length === 0) {
+      return res.status(404).json({
+        msg: "No tasks found for this student's track",
+      });
+    }
 
     res.status(200).json({
-      msg: "Tasks retrieved successfully",
+      msg: "Tasks fetched successfully",
       tasks,
     });
   } catch (error) {
