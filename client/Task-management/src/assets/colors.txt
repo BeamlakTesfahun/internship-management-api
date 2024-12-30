@@ -8,6 +8,7 @@ and normal texts = lightergrey
 page background = White 
 but some section withtransparent bacground color = lightergrey(# f3f4f7)
 use this colors
+
 #e47b02
 #ed8f0c
 #1f2933

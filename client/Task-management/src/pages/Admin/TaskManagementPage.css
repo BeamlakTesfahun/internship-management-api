@@ -1,0 +1,141 @@
+.task-management-page {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9fb;
+    color: #1f2933;
+    padding: 20px;
+  }
+  
+  .page-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filters-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .search-bar {
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #52606d;
+  }
+  
+  .create-task-button {
+    background-color: #e47b02;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .create-task-button:hover {
+    background-color: #ed8f0c;
+  }
+  
+  .task-list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .task-table th, .task-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f7;
+  }
+  
+  .task-table th {
+    background-color: #52606d;
+    color: #ffffff;
+  }
+  
+  .task-table tr:hover {
+    background-color: #f3f4f7;
+  }
+  
+  .edit-button {
+    background-color: #52606d;
+    color: #ffffff;
+    margin-right: 10px;
+  }
+  
+  .delete-button {
+    background-color: #e47b02;
+    color: #ffffff;
+  }
+  /* General styles remain the same */
+
+@media (max-width: 768px) {
+    /* Adjust header for small screens */
+    .page-header {
+      padding: 15px;
+    }
+  
+    .filters-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .search-bar {
+      width: 100%;
+    }
+  
+    .create-task-button {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .task-list {
+      padding: 15px;
+    }
+  
+    .task-table {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+  
+    .task-table th, .task-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .page-header h1 {
+      font-size: 20px;
+    }
+  
+    .page-header p {
+      font-size: 14px;
+    }
+  
+    .filters-actions {
+      gap: 5px;
+    }
+  
+    .task-table th, .task-table td {
+      font-size: 12px;
+      padding: 6px;
+    }
+  
+    .create-task-button, .edit-button, .delete-button {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+  
