@@ -3,6 +3,7 @@ import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import User from "../models/userModel.js";
+import Track from "../models/trackModel.js";
 import resetPasswordEmail from "../emails/resetPasswordEmail.js";
 import inviteEmail from "../emails/inviteEmail.js";
 import welcomeEmail from "../emails/welcomeEmail.js";
@@ -61,7 +62,7 @@ const inviteUser = async (req, res) => {
     const inviteToken = crypto.randomBytes(32).toString("hex");
     const inviteTokenExpires = Date.now() + 24 * 7 * 60 * 60 * 1000; // 7 days
 
-    //
+    // create user
     const user = new User({
       email,
       role,
@@ -72,6 +73,17 @@ const inviteUser = async (req, res) => {
     });
 
     await user.save();
+
+    // set students field on track schema
+    const track = await Track.findById(trackId);
+    if (!track) {
+      return res.status(StatusCodes.NOT_FOUND).json({
+        msg: "Track not found",
+      });
+    }
+
+    track.students.push(user._id);
+    await track.save();
 
     // invite email
     const inviteUrl = `${req.protocol}://${req.get(
