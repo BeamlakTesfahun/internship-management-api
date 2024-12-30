@@ -22,12 +22,14 @@ export default (emailAddress, name) => {
     }
     .header {
       text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eeeeee;
+      background-color: #ED8F0C;
+      color: white;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
     }
     .header h1 {
-      color: #333333;
       font-size: 24px;
+      margin: 0;
     }
     .content {
       padding: 20px;
@@ -54,15 +56,15 @@ export default (emailAddress, name) => {
       text-align: center;
       margin: 20px auto;
       padding: 12px 20px;
-      background-color: #4CAF50;
-      color: #ffffff;
+      background-color: #ED8F0C;
+      color: white;
       text-decoration: none;
       border-radius: 5px;
       font-size: 16px;
       font-weight: bold;
     }
     .button:hover {
-      background-color: #45a049;
+      background-color: #e07609;
     }
     .footer {
       text-align: center;
@@ -71,7 +73,7 @@ export default (emailAddress, name) => {
       margin-top: 20px;
     }
     .footer a {
-      color: #4CAF50;
+      color: #ED8F0C;
       text-decoration: none;
     }
     .footer a:hover {
@@ -82,7 +84,7 @@ export default (emailAddress, name) => {
 <body>
   <div class="email-container">
     <div class="header">
-      <h1>🎉 Welcome to InterTecHub!</h1>
+      <h1>Welcome to InterTecHub!</h1>
     </div>
     <div class="content">
       <h2>Hello ${name},</h2>
@@ -103,7 +105,7 @@ export default (emailAddress, name) => {
   </div>
 </body>
 </html>
-`;
+  `;
 
   return sendEmail(emailAddress, subject, message);
 };
