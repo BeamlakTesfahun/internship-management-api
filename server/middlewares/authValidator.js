@@ -33,7 +33,10 @@ export const validateAdminRegistration = [
 // validation for inviting students
 export const validateInviteUser = [
   emailValidation,
-  // check("role").notEmpty().withMessage("Role is required"),
+  check("trackId")
+    .notEmpty()
+    .isMongoId()
+    .withMessage("Track ID must be a valid MongoDB ID"),
 ];
 
 // validation for setup account controller
