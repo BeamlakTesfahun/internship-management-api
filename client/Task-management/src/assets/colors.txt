@@ -1,0 +1,18 @@
+buutons=> backgroundColor = #ed8f0c   and texts color = #f9f9fb
+blublack = #1f2933
+lightgrey = #3e4c59
+black = 
+hover and active = ed8f0c
+titles , links (nav links that are not active) = blublack
+and normal texts = lightergrey
+page background = White 
+but some section withtransparent bacground color = lightergrey(# f3f4f7)
+use this colors
+#e47b02
+#ed8f0c
+#1f2933
+#52606d
+#f3f4f7
+#f9f9fb
+#ffffff
+
