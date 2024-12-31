@@ -5,84 +5,114 @@ import Task from "../models/taskModel.js";
 const submitTask = async (req, res) => {
   try {
     const { taskId } = req.params;
-    const { file, content, links } = req.body;
+    const { content, links } = req.body;
+
+    const file = req.file;
 
     const task = await Task.findById(taskId);
 
     if (!task) {
-      return res.status(404).json({ msg: "Task not found" });
+      return res.status(StatusCodes.NOT_FOUND).json({ msg: "Task not found" });
+    }
+
+    let parsedLinks = [];
+    if (links) {
+      try {
+        parsedLinks = JSON.parse(links);
+      } catch (err) {
+        parsedLinks = [links];
+      }
+    }
+
+    const submissionDetails = {
+      content,
+      links: parsedLinks,
+    };
+
+    if (file) {
+      submissionDetails.file = file.path;
     }
 
     const submission = new Submission({
-      student: req.user.id,
+      student: req.user.userId,
       task: taskId,
-      submissionDetails: {
-        file,
-        content,
-        links,
-      },
+      submissionDetails,
     });
 
     await submission.save();
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
       msg: "Task submitted successfully",
       submission,
     });
   } catch (error) {
-    console.error("Error occured:", error);
-    res.status(500).json({ msg: "Internal server error" });
+    console.error("Error occurred:", error);
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ msg: "Internal server error" });
   }
 };
 
 // view submission details
 const getSubmissionDetails = async (req, res) => {
   try {
-    const { taskId } = req.params;
-    const studentId = req.user.id;
+    const { submissionId } = req.params;
+    const studentId = req.user.userId;
+
+    // console.log("sub id", submissionId);
+    // console.log("stud id", studentId);
 
     const submission = await Submission.findOne({
-      task: taskId,
+      _id: submissionId,
       student: studentId,
-    }).populate("task");
+    });
 
     if (!submission) {
-      return res.status(404).json({ msg: "Submission not found" });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ msg: "Submission not found" });
     }
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
       msg: "Submission details",
       submission,
     });
   } catch (error) {
     console.error("Error occurred", error);
-    res.status(500).json({ msg: "Internal server error" });
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ msg: "Internal server error" });
   }
 };
 
 const provideFeedback = async (req, res) => {
   try {
     const { submissionId } = req.params;
-    const { feedback } = req.body;
+    const { feedback, status } = req.body;
 
     const submission = await Submission.findById(submissionId);
 
     if (!submission) {
-      return res.status(404).json({ msg: "Submission not found" });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ msg: "Submission not found" });
     }
 
     submission.feedback = feedback;
+    submission.status = status;
     // submission.graded = true;
 
     await submission.save();
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
       msg: "Feedback submitted successfully",
       submission,
     });
   } catch (error) {
     console.error("Error submitting feedback:", error);
-    res.status(500).json({ msg: "Internal server error" });
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ msg: "Internal server error" });
   }
 };
 
@@ -93,7 +123,7 @@ const getAllSubmissions = async (req, res) => {
     const task = await Task.findById(taskId);
 
     if (!task) {
-      return res.status(404).json({ msg: "Task not found" });
+      return res.status(StatusCodes.NOT_FOUND).json({ msg: "Task not found" });
     }
 
     const submissions = await Submission.find({ task: taskId }).populate(
@@ -101,16 +131,18 @@ const getAllSubmissions = async (req, res) => {
     );
 
     if (submissions.length === 0) {
-      return res.status(404).json({ msg: "No submissions" });
+      return res.status(StatusCodes.NOT_FOUND).json({ msg: "No submissions" });
     }
 
-    res.status(200).json({
+    res.status(StatusCodes.OK).json({
       msg: "Submissions fetched successfully",
       submissions,
     });
   } catch (error) {
     console.error("Error occurred:", error);
-    res.status(500).json({ msg: "Internal server error" });
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ msg: "Internal server error" });
   }
 };
 
