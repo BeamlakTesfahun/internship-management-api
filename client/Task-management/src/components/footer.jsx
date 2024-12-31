@@ -2,7 +2,7 @@ import React from 'react';
 import { FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
 
-const git  = () => {
+const Footer  = () => {
   return (
     <footer className="footer">
       {/* Company Information */}

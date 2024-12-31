@@ -6,7 +6,7 @@ import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
 import './auth.css'; // Styling for auth pages
 
-const UserLogin = () => {
+const AdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -51,4 +51,4 @@ const UserLogin = () => {
   );
 };
 
-export default UserLogin;
+export default AdminLogin;
