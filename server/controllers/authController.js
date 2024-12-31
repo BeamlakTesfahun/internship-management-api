@@ -182,7 +182,7 @@ const login = async (req, res) => {
       token: token,
       user: {
         userId: findUser._id,
-        username: findUser.username,
+        name: findUser.name,
         email: findUser.email,
         role: findUser.role,
       },
