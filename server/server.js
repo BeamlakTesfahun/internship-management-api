@@ -26,6 +26,8 @@ app.use(cors());
 // for parsing json bodies
 app.use(express.json());
 
+app.use(express.urlencoded({ extended: true }));
+
 // routes
 app.use("/auth", authRoutes);
 app.use("/tasks", taskRoutes);
