@@ -15,8 +15,8 @@ const submissionSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["Pending", "Approved", "Rejected"],
-      default: "Pending",
+      enum: ["pending", "approved", "rejected"],
+      default: "pending",
     },
     feedback: { type: String },
     //   grade: { type: Number, min: 0, max: 100 },
