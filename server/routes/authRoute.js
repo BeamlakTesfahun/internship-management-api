@@ -37,7 +37,7 @@ router.post(
   inviteUser
 );
 
-router.post("/login/", validateLogin, handleValidationErrors, login);
+router.post("/login", validateLogin, handleValidationErrors, login);
 
 router.post(
   "/setup-account/:inviteToken",
