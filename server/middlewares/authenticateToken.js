@@ -13,13 +13,9 @@ const authenticateToken = (req, res, next) => {
   const token = authHeader.split(" ")[1];
 
   try {
-    const { userId, username, role } = jwt.verify(
-      token,
-      process.env.JWT_SECRET
-    );
+    const { userId, role } = jwt.verify(token, process.env.JWT_SECRET);
     req.user = {
       userId,
-      username,
       role,
     };
 
