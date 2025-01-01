@@ -5,7 +5,8 @@ import User from "../models/userModel.js";
 
 const createTask = async (req, res) => {
   try {
-    const { title, description, deadline, createdBy, trackId } = req.body;
+    const { title, description, deadline, trackId } = req.body;
+    const createdBy = req.user.userId;
 
     const track = await Track.findById(trackId);
     if (!track) {
