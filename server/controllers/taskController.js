@@ -2,6 +2,7 @@ import { StatusCodes } from "http-status-codes";
 import Track from "../models/trackModel.js";
 import Task from "../models/taskModel.js";
 import User from "../models/userModel.js";
+import Submission from "../models/submissionModel.js";
 
 const createTask = async (req, res) => {
   try {
@@ -152,8 +153,16 @@ const getStudentTasks = async (req, res) => {
       });
     }
 
+    const submittedTaskIds = await Submission.find({
+      student: userId,
+    }).distinct("task");
+
+    const unsubmittedTasks = tasks.filter(
+      (task) => !submittedTaskIds.includes(task._id.toString())
+    );
+
     const currentDate = new Date();
-    const validTasks = tasks.filter(
+    const validTasks = unsubmittedTasks.filter(
       (task) => new Date(task.deadline) >= currentDate
     );
 
