@@ -41,6 +41,9 @@ const submitTask = async (req, res) => {
 
     await submission.save();
 
+    task.submissions.push(submission._id);
+    await task.save();
+
     res.status(StatusCodes.OK).json({
       msg: "Task submitted successfully",
       submission,
