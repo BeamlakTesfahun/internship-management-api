@@ -1,6 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import Submission from "../models/submissionModel.js";
 import Task from "../models/taskModel.js";
+import User from "../models/userModel.js";
 
 const submitTask = async (req, res) => {
   try {
@@ -13,6 +14,24 @@ const submitTask = async (req, res) => {
 
     if (!task) {
       return res.status(StatusCodes.NOT_FOUND).json({ msg: "Task not found" });
+    }
+
+    const student = await User.findById(req.user.userId).populate("track");
+
+    if (!student) {
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ msg: "Student not found" });
+    }
+
+    const isTaskInStudentTrack = student.track.some((track) =>
+      track.tasks.includes(taskId)
+    );
+
+    if (!isTaskInStudentTrack) {
+      return res.status(StatusCodes.FORBIDDEN).json({
+        msg: "You can only submit tasks for tracks you are enrolled in",
+      });
     }
 
     const existingSubmission = await Submission.findOne({
