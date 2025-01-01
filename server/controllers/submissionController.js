@@ -15,6 +15,17 @@ const submitTask = async (req, res) => {
       return res.status(StatusCodes.NOT_FOUND).json({ msg: "Task not found" });
     }
 
+    const existingSubmission = await Submission.findOne({
+      student: req.user.userId,
+      task: taskId,
+    });
+
+    if (existingSubmission) {
+      return res.status(StatusCodes.CONFLICT).json({
+        msg: "You have already submitted this task.",
+      });
+    }
+
     let parsedLinks = [];
     if (links) {
       try {
