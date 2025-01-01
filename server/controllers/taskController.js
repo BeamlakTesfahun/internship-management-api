@@ -151,9 +151,18 @@ const getStudentTasks = async (req, res) => {
       });
     }
 
+    const currentDate = new Date();
+    const validTasks = tasks.filter(
+      (task) => new Date(task.deadline) >= currentDate
+    );
+
+    const sortedTasks = validTasks.sort(
+      (a, b) => new Date(b.deadline) - new Date(a.deadline)
+    );
+
     res.status(StatusCodes.OK).json({
       msg: "Tasks fetched successfully",
-      tasks,
+      tasks: sortedTasks,
     });
   } catch (error) {
     console.error("Error fetching tasks for student:", error);
