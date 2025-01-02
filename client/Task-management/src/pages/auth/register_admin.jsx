@@ -4,7 +4,7 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './auth.css'; // Styling for auth pages
+import './auth.css'; 
 
 const AdminSignUp = () => {
   const [name, setName] = useState('');
@@ -25,13 +25,13 @@ const AdminSignUp = () => {
         confirmPassword,
         role,
       };
-      console.log('Request payload:', payload); // Log the request payload
+      console.log('Request payload:', payload); 
       const response = await axiosInstance.post('/auth/register-admin', payload);
-      console.log('Response:', response); // Log the response
+      console.log('Response:', response); 
       setSuccess(response.data.msg || 'Admin registered successfully!');
       setError('');
     } catch (err) {
-      console.error('Registration error:', err); // Log the error to the console
+      console.error('Registration error:', err); 
       if (err.msg) {
         setError(err.msg);
       } else if (err.response && err.response.data && err.response.data.msg) {

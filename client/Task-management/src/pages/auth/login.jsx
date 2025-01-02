@@ -43,7 +43,8 @@ const UserLogin = () => {
         {error && <p className="error-message">{error}</p>}
         {success && <p className="success-message">{success}</p>}
         <div className="auth-links">
-          <a href="/register-admin" className="auth-link">Don't have an account? Sign Up</a>
+          <a href="/auth/forgot-password" className="auth-link">forgotpassword</a>
+          
         </div>
       </div>
       <Footer />

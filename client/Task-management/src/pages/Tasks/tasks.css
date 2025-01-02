@@ -1,0 +1,112 @@
+.tasks-page {
+    background-color: #f3f4f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .tasks-container {
+    background-color: #ffffff;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  .tasks-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2933;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .tasks-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .input-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field label {
+    margin-bottom: 0.5rem;
+    color: #52606d;
+  }
+  
+  .input-field select,
+  .input-field input[type="text"],
+  .input-field input[type="date"],
+  .input-field input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid #e47b02;
+    border-radius: 5px;
+  }
+  
+  .input-field select:focus,
+  .input-field input[type="text"]:focus,
+  .input-field input[type="date"]:focus,
+  .input-field input[type="file"]:focus {
+    outline: none;
+    border-color: #ed8f0c;
+  }
+  
+  .tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .task-item {
+    background-color: #f9f9fb;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-item h2 {
+    font-size: 20px;
+    color: #ed8f0c;
+  }
+  
+  .task-item p {
+    font-size: 16px;
+    color: #1f2933;
+  }
+  
+  .task-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .task-action-button {
+    padding: 0.5rem 1rem;
+    background-color: #e47b02;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .task-action-button:hover {
+    background-color: #ed8f0c;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+  }
+  
+  .success-message {
+    color: green;
+    text-align: center;
+  }

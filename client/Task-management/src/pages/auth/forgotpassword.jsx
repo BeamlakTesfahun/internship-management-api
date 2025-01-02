@@ -4,7 +4,7 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './auth.css'; // Styling for auth pages
+import './auth.css'; 
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -20,7 +20,7 @@ const ForgotPassword = () => {
       setSuccess(response.data.msg || 'Password reset link sent!');
       setError('');
     } catch (err) {
-      console.error('Forgot password error:', err); // Log the error to the console
+      console.error('Forgot password error:', err); 
       if (err.msg) {
         setError(err.msg);
       } else if (err.response && err.response.data && err.response.data.msg) {

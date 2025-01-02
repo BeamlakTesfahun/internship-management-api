@@ -4,7 +4,7 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './auth.css'; // Styling for auth pages
+import './auth.css'; 
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -21,7 +21,6 @@ const AdminLogin = () => {
       });
       setSuccess('Login successful!');
       setError('');
-      // Store the token and user details in local storage or context
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
     } catch (err) {
@@ -32,7 +31,7 @@ const AdminLogin = () => {
 
   return (
     <div className="auth-page">
-      <Navbar />
+      <Navbar role = 'admin' />
       <div className="auth-container">
         <h1 className="auth-title">Login</h1>
         <form className="auth-form" onSubmit={handleLogin}>

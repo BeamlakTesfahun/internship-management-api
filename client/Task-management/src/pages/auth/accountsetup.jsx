@@ -5,10 +5,10 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './auth.css'; // Styling for auth pages
+import './auth.css'; // 
 
 const SetupAccount = () => {
-  const { token } = useParams(); // Get the token from the URL
+  const { token } = useParams(); 
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -21,13 +21,13 @@ const SetupAccount = () => {
         name,
         password,
       };
-      console.log('Request payload:', payload); // Log the request payload
+      console.log('Request payload:', payload); 
       const response = await axiosInstance.post(`/auth/setup-account/${token}`, payload);
-      console.log('Response:', response); // Log the response
+      console.log('Response:', response); 
       setSuccess(response.data.msg || 'Account setup successfully!');
       setError('');
     } catch (err) {
-      console.error('Setup error:', err); // Log the error to the console
+      console.error('Setup error:', err); 
       if (err.msg) {
         setError(err.msg);
       } else if (err.response && err.response.data && err.response.data.msg) {
@@ -41,7 +41,7 @@ const SetupAccount = () => {
 
   return (
     <div className="auth-page">
-      <Navbar />
+      <Navbar  />
       <div className="auth-container">
         <h1 className="auth-title">Set Up Account</h1>
         <form className="auth-form" onSubmit={handleSetup}>
