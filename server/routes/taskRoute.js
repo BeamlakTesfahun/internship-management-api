@@ -47,7 +47,7 @@ router.delete(
   deleteTask
 );
 router.get(
-  "/student/:userId",
+  "/student",
   validateGetStudentTasks,
   authenticateToken,
   authorizeRole(["student"]),

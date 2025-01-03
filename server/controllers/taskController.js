@@ -126,7 +126,7 @@ const deleteTask = async (req, res) => {
 // get student tasks
 const getStudentTasks = async (req, res) => {
   try {
-    const { userId } = req.params;
+    const { userId } = req.user.userId;
 
     const student = await User.findById(userId).populate("track");
 
