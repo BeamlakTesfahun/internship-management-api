@@ -3,7 +3,7 @@ import {
   validateCreateTask,
   validateGetTasks,
   validateUpdateTask,
-  // validateGetStudentTasks,
+  validateGetStudentTasks,
   validateDeleteTask,
 } from "../middlewares/taskValidator.js";
 import authenticateToken from "../middlewares/authenticateToken.js";
@@ -25,13 +25,7 @@ router.post(
   authorizeRole(["admin"]),
   createTask
 );
-router.get(
-  "/student",
-  // validateGetStudentTasks,
-  authenticateToken,
-  authorizeRole(["student"]),
-  getStudentTasks
-);
+
 router.get(
   "/:trackId",
   validateGetTasks,
@@ -52,6 +46,13 @@ router.delete(
   authenticateToken,
   authorizeRole(["admin"]),
   deleteTask
+);
+router.get(
+  "/student/:userId",
+  validateGetStudentTasks,
+  authenticateToken,
+  authorizeRole(["student"]),
+  getStudentTasks
 );
 
 export default router;
