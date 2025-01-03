@@ -3,7 +3,7 @@ import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 import axiosInstance from '../../utils/axios';
 import Button from '../../components/button';
-import './tracks.css'; // Styling for tracks pages
+import './tracks_l.css'; // Styling for tracks pages
 
 const TracksList = () => {
   const [tracks, setTracks] = useState([]);
@@ -39,14 +39,18 @@ const TracksList = () => {
 
   return (
     <div className="tracks-page">
-      <Navbar />
+      <Navbar role = 'admin' />
       <div className="tracks-container">
-        <h1 className="tracks-title">Tracks</h1>
         <div className="tracks-header">
-          <p>This internship program offers diverse tracks designed to provide hands-on experience and practical knowledge in various fields of technology. Each track is carefully curated to equip interns with industry-relevant skills and tools, ensuring they gain expertise in their chosen domain.</p>
-          <div className="button-container">
-          <Button onClick={() => setShowTracks(!showTracks)} text='View All Tracks' />
+          <h1 className="tracks-title">Tracks</h1>
+          <div className="tracks-description-container">
+            <p className="tracks-description">
+              This internship program offers diverse tracks designed to provide hands-on experience and practical knowledge in various fields of technology. Each track is carefully curated to equip interns with industry-relevant skills and tools, ensuring they gain expertise in their chosen domain.
+            </p>
+            <div className="button-container">
+              <Button onClick={() => setShowTracks(!showTracks)} text={showTracks ? 'Hide Tracks' : 'View All Tracks'} />
             </div>
+          </div>
         </div>
         {error && <p className="error-message">{error}</p>}
         {showTracks && (

@@ -1,0 +1,74 @@
+.provide-feedback-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f4f8; /* Light background color */
+  }
+  
+  .provide-feedback-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .provide-feedback-title {
+    margin-bottom: 20px;
+    color: #1f2933;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .provide-feedback-form {
+    width: 100%;
+    max-width: 600px; /* Set a maximum width for the form */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-field {
+    margin-bottom: 20px;
+  }
+  
+  .input-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #52606d;
+  }
+  
+  .input-field input,
+  .input-field textarea,
+  .input-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    text-decoration: none;
+    background-color: #ed8f0c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e47b02;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: green;
+    margin-top: 10px;
+  }

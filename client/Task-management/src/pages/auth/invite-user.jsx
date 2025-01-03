@@ -4,7 +4,8 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './auth.css'; 
+import logo from '../../assets/logo.png';
+import './InviteUser.css'; 
 
 const AdminInviteUser = () => {
   const [email, setEmail] = useState('');
@@ -74,27 +75,32 @@ const AdminInviteUser = () => {
   };
 
   return (
-    <div className="auth-page">
+    <div className="invite-user-page">
       <Navbar role="admin" />
-      <div className="auth-container">
-        <h1 className="auth-title">Invite User</h1>
-        <form className="auth-form" onSubmit={handleInvite}>
-          <InputField label="Email" type="email" placeholder="Enter user's email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <div className="input-field">
-            <label htmlFor="track">Select Track</label>
-            <select id="track" value={trackId} onChange={(e) => setTrackId(e.target.value)}>
-              <option value="">Select a track</option>
-              {tracks.map((track) => (
-                <option key={track._id} value={track._id}>
-                  {track.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <Button text="Send Invite" type="submit" />
-        </form>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>}
+      <div className="invite-user-container">
+        <div className="form-section">
+          <h1 className="auth-title">Invite User</h1>
+          <form className="auth-form" onSubmit={handleInvite}>
+            <InputField label="Email" type="email" placeholder="Enter user's email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <div className="input-field">
+              <label htmlFor="track">Select Track</label>
+              <select id="track" value={trackId} onChange={(e) => setTrackId(e.target.value)}>
+                <option value="">Select a track</option>
+                {tracks.map((track) => (
+                  <option key={track._id} value={track._id}>
+                    {track.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <Button text="Send Invite" type="submit" />
+          </form>
+          {error && <p className="error-message">{error}</p>}
+          {success && <p className="success-message">{success}</p>}
+        </div>
+        <div className="logo-section">
+          <img src={logo} alt="InterTechHub Logo" />
+        </div>
       </div>
       <Footer />
     </div>

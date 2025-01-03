@@ -120,3 +120,15 @@
     color: green;
     text-align: center;
   }
+
+@media (min-width: 768px) {
+  .auth-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form-section,
+  .logo-section {
+    width: 45%;
+  }
+}

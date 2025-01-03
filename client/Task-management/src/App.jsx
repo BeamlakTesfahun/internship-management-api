@@ -18,6 +18,7 @@ import SubmitTask from './pages/Tasks/SubmitTask';
 import SubmissionDetails from './pages/Tasks/SubmissionDetails';
 import ProvideFeedback from './pages/Tasks/ProvideFeedback';
 import AllSubmissions from './pages/Tasks/AllSubmissions';
+import AdminDashboard from './pages/Admin/admin_dashboard';
 
 
 
@@ -25,6 +26,9 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/" element={<AdminDashboard />} />
+
+        <Route path="/Dashboard" element={<AdminDashboard />} />
         <Route path="/register-admin" element={<AdminSignUp />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/invite-user" element={<AdminInviteUser />} />

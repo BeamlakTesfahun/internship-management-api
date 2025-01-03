@@ -1,0 +1,120 @@
+.tasks-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ffffff; /* White background */
+  }
+  
+  .tasks-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .tasks-title {
+    margin-bottom: 20px;
+    color: #1f2933;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .input-field {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .input-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #52606d;
+  }
+  
+  .input-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+  }
+  
+  .tasks-table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .tasks-table th,
+  .tasks-table td {
+    padding: 15px 20px; /* Add more gap between columns */
+    text-align: left;
+    font-family: 'Arial', sans-serif; /* Change font type */
+  }
+  
+  .tasks-table th {
+    color: #1f2933;
+    font-weight: bold;
+  }
+  
+  .tasks-table td {
+    color: #52606d;
+    border-bottom: none; /* Remove tiny lines between rows */
+  }
+  
+  .task-actions {
+    display: flex;
+    gap: 10px; /* Add gap between buttons */
+  }
+  
+  .task-action-button {
+    text-decoration: none;
+    background-color: #1f2933; /* Change button color */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .task-action-button:hover {
+    background-color: #45a049; /* Change hover color */
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .success-message {
+    color: green;
+    margin-top: 10px;
+  }
+  
+  .delete-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .dialog-button {
+    background-color: #ed8f0c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .dialog-button:hover {
+    background-color: #e47b02;
+  }

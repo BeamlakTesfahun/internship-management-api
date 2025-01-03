@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 import axiosInstance from '../../utils/axios';
-import './tasks.css'; // Styling for tasks pages
+import './stud_task.css'; // Styling for tasks pages
 
 const StudentTasks = () => {
   const [tasks, setTasks] = useState([]);
@@ -46,18 +46,28 @@ const StudentTasks = () => {
         {tasks.length === 0 ? (
           <p className="no-tasks-message">No tasks found for this student's track.</p>
         ) : (
-          <div className="tasks-list">
-            {tasks.map((task) => (
-              <div key={task._id} className="task-item">
-                <h2>{task.title}</h2>
-                <p>{task.description}</p>
-                <p>Deadline: {new Date(task.deadline).toLocaleDateString()}</p>
-                <div className="task-actions">
-                  <Link to={`/submissions/submit-task/${task._id}`} className="task-action-button">Submit</Link>
-                </div>
-              </div>
-            ))}
-          </div>
+          <table className="tasks-table">
+            <thead>
+              <tr>
+                <th>Task Name</th>
+                <th>Description</th>
+                <th>Deadline</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tasks.map((task) => (
+                <tr key={task._id}>
+                  <td>{task.title}</td>
+                  <td>{task.description}</td>
+                  <td>{new Date(task.deadline).toLocaleDateString()}</td>
+                  <td className="task-actions">
+                    <Link to={`/submissions/submit-task/${task._id}`} className="task-action-button">Submit</Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         )}
       </div>
       <Footer />

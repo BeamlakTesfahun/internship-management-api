@@ -3,95 +3,79 @@ body {
     margin: 0;
     padding: 0;
   }
-  
-  .tracks-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .tracks-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .tracks-title {
-    text-align: start;
-    font-size: 24px;
-    color: #1f2933;
-    margin-bottom: 20px;
-  }
-  
-  .tracks-header {
-    display: flex;
-    justify-content:space-between ;
-    /* align-items: center; */
-    margin-bottom: 20px;
-    padding: 50px;
-    padding-right: 15px;
+  /* tracks.css */
 
-  }
-  
-  .tracks-header p {
-    font-size: 16px;
-    color: #52606d;
-  }
-  
-  /* .tracks-header button {
-    padding: 10px 20px;
-    background-color: #e47b02;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  } */
-  
-  .tracks-header button:hover {
-    background-color: #ed8f0c;
-  }
-  
-  .tracks-list {
-    display: flex;
-    /* flex-wrap: wrap; */
-    gap: 20px;
-  }
-  
-  .track-item {
-    background-color:#ffffff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-  }
-  
-  .track-item h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #ed8f0c;
-  }
-  
-  .track-item p {
-    margin: 10px 0 0;
-    font-size: 16px;
-    color: #1f2933;
-    font-weight: lighter;
-  }
-  
-  .error-message {
-    color: red;
-    text-align: center;
-  }
-  
-  .success-message {
-    color: green;
-    text-align: center;
-  }
-  
+.tracks-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.tracks-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9fb;
+}
+
+.tracks-title {
+  margin-bottom: 20px;
+  color: #1f2933;
+}
+
+.tracks-form {
+  width: 100%;
+  max-width: 600px; /* Set a maximum width for the form */
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+  color: #52606d;
+}
+
+.input-field input,
+.input-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  text-decoration: none;
+  background-color: #ed8f0c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #e47b02;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
   @media (max-width: 768px) {
     .tracks-header {
       flex-direction: column;

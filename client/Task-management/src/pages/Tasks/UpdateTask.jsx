@@ -5,8 +5,7 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './tasks.css'; // Styling for tasks pages
-
+import './update_task.css'; // Styling for tasks pages
 const UpdateTask = () => {
   const { taskId } = useParams();
   const [title, setTitle] = useState('');

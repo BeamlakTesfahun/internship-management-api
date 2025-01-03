@@ -5,7 +5,7 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './auth.css'; // 
+import './acc_set.css'; // 
 
 const SetupAccount = () => {
   const { token } = useParams(); 

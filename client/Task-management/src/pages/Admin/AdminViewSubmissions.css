@@ -1,150 +1,150 @@
-/* AdminViewSubmissions.css */
-.admin-container {
-  padding: 20px;
-  background-color: #ffffff;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* AdminDashboard.css */
 
-.content {
-  padding: 20px;
-}
-
-.title {
-  font-size: 2rem;
-  color: #1f2933;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.submission-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  font-size: 1rem;
-}
-
-.submission-table th,
-.submission-table td {
-  border: 1px solid #f3f4f7;
-  padding: 10px;
-  text-align: left;
-}
-
-.submission-table th {
-  background-color: #ed8f0c;
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.submission-table tr:nth-child(even) {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   background-color: #f9f9fb;
 }
 
-.submission-table tr:hover {
-  background-color: #f3f4f7;
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-.feedback-textarea {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-  resize: none;
+.dashboard-container {
+  display: flex;
+  flex: 1;
+  background-color: #34495e; /* Consistent background color */
 }
 
-.submit-feedback {
-  margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-  .submission-table th, .submission-table td {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-
-  .feedback-textarea {
-    height: 80px;
-  }
-
-  .submit-feedback {
-    width: 100%;
-  }
-}
-/* AdminViewSubmissions.css */
-.admin-container {
-  padding: 20px;
-  background-color: #ffffff;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.content {
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1f2933;
+  color: white;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 }
 
-.title {
-  font-size: 2rem;
-  color: #1f2933;
-  text-align: center;
+.sidebar .logo {
+  font-size: 24px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
-.submission-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  font-size: 1rem;
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.submission-table th,
-.submission-table td {
-  border: 1px solid #f3f4f7;
-  padding: 10px;
-  text-align: left;
+.sidebar ul li {
+  margin: 15px 0;
 }
 
-.submission-table th {
-  background-color: #ed8f0c;
-  color: #ffffff;
-  font-weight: bold;
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
 }
 
-.submission-table tr:nth-child(even) {
-  background-color: #f9f9fb;
+.sidebar ul li a:hover {
+  color: #ed8f0c;
 }
 
-.submission-table tr:hover {
+.sidebar ul li a svg {
+  margin-right: 10px;
+}
+
+/* Main Content */
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
   background-color: #f3f4f7;
+  overflow-y: auto;
 }
 
-.feedback-textarea {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  color: #1f2933;
+}
+
+.dashboard-header p {
+  font-size: 16px;
+  color: #52606d;
+}
+
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 10px;
-  resize: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.submit-feedback {
-  margin-top: 10px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+.card h2 {
+  font-size: 20px;
+  color: #1f2933;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #52606d;
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  text-decoration: none;
+  background-color: #ed8f0c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #e47b02;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .submission-table th, .submission-table td {
-    font-size: 0.9rem;
-    padding: 8px;
+  .dashboard-container {
+    flex-direction: column;
   }
 
-  .feedback-textarea {
-    height: 80px;
-  }
-
-  .submit-feedback {
+  .sidebar {
     width: 100%;
+    padding: 10px;
+  }
+
+  .dashboard-content {
+    padding: 10px;
+  }
+
+  .dashboard-sections {
+    grid-template-columns: 1fr;
   }
 }

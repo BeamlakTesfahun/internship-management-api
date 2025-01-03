@@ -47,7 +47,7 @@ const CreateTrack = () => {
 
   return (
     <div className="tracks-page">
-      <Navbar />
+      <Navbar role = 'admin' />
       <div className="tracks-container">
         <h1 className="tracks-title">Create Track</h1>
         <form className="tracks-form" onSubmit={handleCreateTrack}>
@@ -63,12 +63,12 @@ const CreateTrack = () => {
           </div>
           <div className="input-field">
             <label htmlFor="description">Description</label>
-            <input
+            <textarea
               id="description"
-              type="text"
               placeholder="Enter track description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              rows="5"
             />
           </div>
           <Button text="Create Track" type="submit" />

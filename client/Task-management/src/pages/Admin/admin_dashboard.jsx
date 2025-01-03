@@ -1,71 +1,69 @@
 import React from 'react';
+import { FaTasks, FaUsers, FaClipboardList, FaPlus } from 'react-icons/fa';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
-import Button from '../../components/button';
-import './AdminDashboard.css';
+import './AdminDashboard.css'; // Add custom CSS for the styles
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
+  const navigateTo = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="admin-dashboard">
       <Navbar role="admin" />
+      <div className="dashboard-container">
+        <nav className="sidebar">
+          <div className="logo">Admin Panel</div>
+          <ul>
+            <li><NavLink to="/tracks/create" activeClassName="active-link"><FaPlus /> Create Track</NavLink></li>
+            <li><NavLink to="/tracks" activeClassName="active-link"><FaClipboardList /> View All Tracks</NavLink></li>
+            <li><NavLink to="/tasks/create" activeClassName="active-link"><FaTasks /> Create Task</NavLink></li>
+            {/* <li><NavLink to="/view-submissions" activeClassName="active-link"><FaUsers /> View Submissions</NavLink></li> */}
+            <li><NavLink to="/invite-user" activeClassName="active-link"><FaPlus /> Invite User</NavLink></li>
+          </ul>
+        </nav>
 
-      {/* Header Section */}
-      <header className="dashboard-header">
-        <h1>Welcome, Admin!</h1>
-        <p>Manage your tasks and submissions efficiently.</p>
-      </header>
+        <main className="dashboard-content">
+          <header className="dashboard-header">
+            <h1>Welcome, Admin</h1>
+            <p>Manage tracks, tasks, and user invitations seamlessly.</p>
+          </header>
 
-      {/* Metrics Section */}
-      <section className="metrics-section">
-        <div className="metric-card">
-          <h3>Total Tasks</h3>
-          <p>24</p>
-        </div>
-        <div className="metric-card">
-          <h3>Pending Tasks</h3>
-          <p>8</p>
-        </div>
-        <div className="metric-card">
-          <h3>Reviewed Submissions</h3>
-          <p>16</p>
-        </div>
-      </section>
+          <section className="dashboard-sections">
+            <div className="card">
+              <h2>Tracks</h2>
+              <p>Create and manage tracks effortlessly.</p>
+              <button className="btn-primary" onClick={() => navigateTo('/tracks/create')}>Manage Tracks</button>
+            </div>
+            <div className="card">
+              <h2>Invite Users</h2>
+              <p>Send invitations to new students or admins.</p>
+              <button className="btn-primary" onClick={() => navigateTo('/invite-user')}>Invite Now</button>
+            </div>
+            <div className="card">
+              <h2>Tasks</h2>
+              <p>Assign and track tasks linked to specific tracks.</p>
+              <button className="btn-primary" onClick={() => navigateTo('/tasks/admin')}>Manage Tasks</button>
+            </div>
 
-      {/* Quick Actions */}
-      <section className="quick-actions">
-        <Button text="Create Task" className="action-button" />
-        <Button text="View Submissions" className="action-button" />
-      </section>
+            {/* <div className="card">
+              <h2>Submissions</h2>
+              <p>Review student submissions and provide feedback.</p>
+              <button className="btn-primary" onClick={() => navigateTo('/view-submissions')}>View Submissions</button>
+            </div> */}
 
-      {/* Recent Activities */}
-      <section className="recent-activities">
-        <h2>Recent Activities</h2>
-        <table className="activities-table">
-          <thead>
-            <tr>
-              <th>Task</th>
-              <th>Student</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Assignment 1</td>
-              <td>John Doe</td>
-              <td>Pending</td>
-              <td><Button text="Review" /></td>
-            </tr>
-            <tr>
-              <td>Project Report</td>
-              <td>Jane Smith</td>
-              <td>Reviewed</td>
-              <td><Button text="View" /></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
+            {/* <div className="card">
+              <h2>Invite Users</h2>
+              <p>Send invitations to new students or admins.</p>
+              <button className="btn-primary" onClick={() => navigateTo('/invite-user')}>Invite Now</button>
+            </div> */}
+          </section>
+        </main>
+      </div>
       <Footer />
     </div>
   );

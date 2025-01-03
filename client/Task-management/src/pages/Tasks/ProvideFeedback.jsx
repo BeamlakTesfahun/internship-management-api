@@ -5,7 +5,7 @@ import Footer from '../../components/footer';
 import InputField from '../../components/InputField';
 import Button from '../../components/button';
 import axiosInstance from '../../utils/axios';
-import './tasks.css'; // Styling for tasks pages
+import './provide_feedback.css'; // Styling for provide feedback page
 
 const ProvideFeedback = () => {
   const { submissionId } = useParams();
@@ -48,13 +48,25 @@ const ProvideFeedback = () => {
   };
 
   return (
-    <div className="tasks-page">
-      <Navbar />
-      <div className="tasks-container">
-        <h1 className="tasks-title">Provide Feedback</h1>
-        <form className="tasks-form" onSubmit={handleProvideFeedback}>
-          <InputField label="Feedback" type="text" placeholder="Enter feedback" value={feedback} onChange={(e) => setFeedback(e.target.value)} />
-          <InputField label="Status" type="text" placeholder="Enter status" value={status} onChange={(e) => setStatus(e.target.value)} />
+    <div className="provide-feedback-page">
+      <Navbar role = 'admin' />
+      <div className="provide-feedback-container">
+        <h1 className="provide-feedback-title">Provide Feedback</h1>
+        <form className="provide-feedback-form" onSubmit={handleProvideFeedback}>
+          <InputField
+            label="Feedback"
+            type="text"
+            placeholder="Enter feedback"
+            value={feedback}
+            onChange={(e) => setFeedback(e.target.value)}
+          />
+          <InputField
+            label="Status"
+            type="text"
+            placeholder="Enter status"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
+          />
           <Button text="Submit Feedback" type="submit" />
         </form>
         {error && <p className="error-message">{error}</p>}

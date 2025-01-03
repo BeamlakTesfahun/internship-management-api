@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 import axiosInstance from '../../utils/axios';
-import './tasks.css'; // Styling for tasks pages
+import './all_sub.css'; // Styling for tasks pages
 
 const AllSubmissions = () => {
   const { taskId } = useParams();
@@ -39,26 +39,39 @@ const AllSubmissions = () => {
 
   return (
     <div className="tasks-page">
-      <Navbar />
+      <Navbar role = 'admin' />
       <div className="tasks-container">
         <h1 className="tasks-title">All Submissions</h1>
         {error && <p className="error-message">{error}</p>}
-        <div className="submissions-list">
-          {submissions.map((submission) => (
-            <div key={submission._id} className="submission-item">
-              <p><strong>Student:</strong> {submission.student.email}</p>
-              <p><strong>Content:</strong> {submission.submissionDetails.content}</p>
-              <p><strong>Links:</strong> {submission.submissionDetails.links.join(', ')}</p>
-              {submission.submissionDetails.file && (
-                <p><strong>File:</strong> <a href={submission.submissionDetails.file} target="_blank" rel="noopener noreferrer">Download</a></p>
-              )}
-              <div className="submission-actions">
-                <Link to={`/submissions/details/${submission._id}`} className="submission-action-button">View Details</Link>
-                <Link to={`/submissions/feedback/${submission._id}`} className="submission-action-button">Provide Feedback</Link>
-              </div>
-            </div>
-          ))}
-        </div>
+        <table className="submissions-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Content</th>
+              <th>Links</th>
+              <th>File</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {submissions.map((submission) => (
+              <tr key={submission._id}>
+                <td>{submission.student.email}</td>
+                <td>{submission.submissionDetails.content}</td>
+                <td>{submission.submissionDetails.links.join(', ')}</td>
+                <td>
+                  {submission.submissionDetails.file && (
+                    <a href={submission.submissionDetails.file} target="_blank" rel="noopener noreferrer">Download</a>
+                  )}
+                </td>
+                <td className="submission-actions">
+                  <Link to={`/submissions/details/${submission._id}`} className="submission-action-button">View Details</Link>
+                  <Link to={`/submissions/feedback/${submission._id}`} className="submission-action-button">Provide Feedback</Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
       <Footer />
     </div>
