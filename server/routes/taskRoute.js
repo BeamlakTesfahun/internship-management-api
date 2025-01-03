@@ -3,7 +3,7 @@ import {
   validateCreateTask,
   validateGetTasks,
   validateUpdateTask,
-  validateGetStudentTasks,
+  // validateGetStudentTasks,
   validateDeleteTask,
 } from "../middlewares/taskValidator.js";
 import authenticateToken from "../middlewares/authenticateToken.js";
@@ -27,7 +27,7 @@ router.post(
 );
 router.get(
   "/student",
-  validateGetStudentTasks,
+  // validateGetStudentTasks,
   authenticateToken,
   authorizeRole(["student"]),
   getStudentTasks
