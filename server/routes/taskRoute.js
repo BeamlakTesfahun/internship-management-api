@@ -26,6 +26,13 @@ router.post(
   createTask
 );
 router.get(
+  "/student",
+  validateGetStudentTasks,
+  authenticateToken,
+  authorizeRole(["student"]),
+  getStudentTasks
+);
+router.get(
   "/:trackId",
   validateGetTasks,
   authenticateToken,
@@ -45,13 +52,6 @@ router.delete(
   authenticateToken,
   authorizeRole(["admin"]),
   deleteTask
-);
-router.get(
-  "/student",
-  validateGetStudentTasks,
-  authenticateToken,
-  authorizeRole(["student"]),
-  getStudentTasks
 );
 
 export default router;
