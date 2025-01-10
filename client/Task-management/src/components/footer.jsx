@@ -1,8 +1,8 @@
-import React from 'react';
-import { FaFacebook, FaYoutube, FaInstagram } from 'react-icons/fa';
-import './Footer.css';
+import React from "react";
+import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
+import "./footer.css";
 
-const Footer  = () => {
+const Footer = () => {
   return (
     <footer className="footer">
       {/* Company Information */}
@@ -19,10 +19,18 @@ const Footer  = () => {
       <div className="footer-section quick-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-          <li><a href="/terms">Terms of Service</a></li>
-          <li><a href="/privacy">Privacy Policy</a></li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+          <li>
+            <a href="/contact">Contact Us</a>
+          </li>
+          <li>
+            <a href="/terms">Terms of Service</a>
+          </li>
+          <li>
+            <a href="/privacy">Privacy Policy</a>
+          </li>
         </ul>
       </div>
 
@@ -30,23 +38,35 @@ const Footer  = () => {
       <div className="footer-section social-media">
         <h4>Follow Us</h4>
         <div className="social-icons">
-          <a href="https://intertechub.com/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://intertechub.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaFacebook />
           </a>
-          <a href="https://www.youtube.com/@intertechub" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.youtube.com/@intertechub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaYoutube />
           </a>
-          <a href="https://www.instagram.com/intertechub/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/intertechub/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaInstagram />
           </a>
-         
-          
         </div>
       </div>
 
       {/* Copyright */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} InterTechHub. All rights reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} InterTechHub. All rights reserved.
+        </p>
       </div>
     </footer>
   );
