@@ -96,7 +96,7 @@ export default (emailAddress, name) => {
         <li>Reach out to us for any questions or assistance.</li>
       </ul>
       <p>If you need help, feel free to contact us at <a href="mailto:support@intertechub.com">support@intertechub.com</a>.</p>
-      <a href="https://intertechub.com" class="button">Go to Dashboard</a>
+      <a href="https://intertechub-task-management-app.netlify.app/auth/login" class="button">Go to Dashboard</a>
       <p>Thank you for choosing <strong>InterTecHub</strong>. We’re excited to support you on your journey to success!</p>
     </div>
     <div class="footer">
