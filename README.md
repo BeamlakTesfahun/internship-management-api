@@ -48,5 +48,45 @@ This project is a Task Management Website developed for InterTechHub. It streaml
 + Database: MongoDB
 + Authentication: JSON Web Tokens (JWT) and bcrypt
 + Deployment: [Netlify]
+## Setup Instructions
+
+### Clone the repository:
+```bash
+git clone https://github.com/username/repository-name.git
+``` 
+### Navigate to the project directory:
+```bash
+cd repository-name
+``` 
+### Install dependencies for both frontend and backend:
+```bash
+cd frontend && npm install
+cd ../backend && npm install
+```
+### Configure the environment variables in .env files for both frontend and backend:
+ #### Frontend
+```bash
+REACT_APP_API_URL=http://localhost:5000
+``` 
+#### Backend
+```bash
+DB_URI=mongodb://localhost:27017/intertechhub
+``` 
+### Start the application:
+#### Frontend
+ ```bash
+npm run dev
+```
+#### Backend
+```bash
+npm run dev
+```
+### Contributors
+Backend Developers: Beamlak Tesfahun
+Frontend Developer: Sefina Kamile
+
+
+
+
   
 
