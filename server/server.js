@@ -20,8 +20,23 @@ await connectDB();
 // create express app
 const app = express();
 
+const allowedOrigins = [
+  "https://intertechub-task-management-app.netlify.app",
+  "http://localhost:5173",
+];
+
+const options = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
 // cors
-app.use(cors());
+app.use(cors(options));
 
 // for parsing json bodies
 app.use(express.json());
