@@ -86,9 +86,7 @@ const inviteUser = async (req, res) => {
     await track.save();
 
     // invite email
-    const inviteUrl = `${req.protocol}://${req.get(
-      "host"
-    )}/auth/setup-account/${inviteToken}`;
+    const inviteUrl = `https://intertechub-task-management-app.netlify.app/auth/setup-account/${inviteToken}`;
 
     // ?trackId=${trackId}
 
@@ -217,9 +215,7 @@ const forgotPassword = async (req, res) => {
     await user.save();
 
     // reset URL
-    const resetUrl = `${req.protocol}://${req.get(
-      "host"
-    )}/auth/reset-password/${resetToken}`;
+    const resetUrl = `https://intertechub-task-management-app.netlify.app/auth/reset-password/${resetToken}`;
 
     // reset password email
     await resetPasswordEmail(user.email, resetUrl);
