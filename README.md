@@ -47,7 +47,7 @@ This project is a Task Management Website developed for InterTechHub. It streaml
 + Backend: Node.js with Express.js
 + Database: MongoDB
 + Authentication: JSON Web Tokens (JWT) and bcrypt
-+ Deployment: [Netlify]
++ Deployment: [Netlify](https://intertechub-task-management-app.netlify.app/)
 ## Setup Instructions
 
 ### Clone the repository:
