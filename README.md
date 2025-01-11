@@ -52,25 +52,25 @@ This project is a Task Management Website developed for InterTechHub. It streaml
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/username/repository-name.git
+git clone https://github.com/BeamlakTesfahun/task-management-app.git
 ``` 
 ### Navigate to the project directory:
 ```bash
-cd repository-name
+cd task-management-app
 ``` 
 ### Install dependencies for both frontend and backend:
 ```bash
-cd frontend && npm install
-cd ../backend && npm install
+cd client/Task-management && npm install
+cd ../../server && npm install
 ```
-### Configure the environment variables in .env files for both frontend and backend:
- #### Frontend
-```bash
-REACT_APP_API_URL=http://localhost:5000
-``` 
+### Configure the environment variables in .env files for backend:
 #### Backend
 ```bash
-DB_URI=mongodb://localhost:27017/intertechhub
+PORT=9000
+MONGO_URI=mongodb+srv://intertechub:intertechub24*@intertechub.izxps.mongodb.net/?retryWrites=true&w=majority&appName=intertechub
+JWT_SECRET=c0157d75b4267788a19e8a77ee8248d647adfd119819a3085b3e8590d719b901
+EMAIL=beamlaktsahilu@gmail.com
+EMAIL_PASSWORD=caph dwer gjmt dset
 ``` 
 ### Start the application:
 #### Frontend
@@ -82,7 +82,7 @@ npm run dev
 npm run dev
 ```
 ### Contributors
-* Backend Developers: [Beamlak Tesfahun](https://github.com/BeamlakTesfahun)
+* Backend Developer: [Beamlak Tesfahun](https://github.com/BeamlakTesfahun)
 * Frontend Developer:[Sefina Kamile](https://github.com/Sefukamil20R)
 
 
