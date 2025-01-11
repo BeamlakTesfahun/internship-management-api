@@ -83,7 +83,7 @@ npm run dev
 ```
 ### Contributors
 * Backend Developer: [Beamlak Tesfahun](https://github.com/BeamlakTesfahun)
-* Frontend Developer:[Sefina Kamile](https://github.com/Sefukamil20R)
+* Frontend Developer: [Sefina Kamile](https://github.com/Sefukamil20R)
 
 
 
