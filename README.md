@@ -67,10 +67,10 @@ cd ../../server && npm install
 #### Backend
 ```bash
 PORT=9000
-MONGO_URI=mongodb+srv://intertechub:intertechub24*@intertechub.izxps.mongodb.net/?retryWrites=true&w=majority&appName=intertechub
-JWT_SECRET=c0157d75b4267788a19e8a77ee8248d647adfd119819a3085b3e8590d719b901
-EMAIL=beamlaktsahilu@gmail.com
-EMAIL_PASSWORD=caph dwer gjmt dset
+MONGO_URI=<your_mongo_connection_string>
+JWT_SECRET=<your_jwt_secret>
+EMAIL=<your_email>
+EMAIL_PASSWORD=<your_email_password>
 ``` 
 ### Start the application:
 #### Frontend
