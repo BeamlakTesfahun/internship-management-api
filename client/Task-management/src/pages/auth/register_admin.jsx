@@ -15,8 +15,39 @@ const AdminSignUp = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
   const handleSignUp = async (e) => {
     e.preventDefault();
+
+    if (!name) {
+      setError('Name is required.');
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setError('Invalid email address.');
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      setError('Password must be at least 8 characters long and include at least 1 digit, 1 special character, and 1 letter.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+
     try {
       const payload = {
         name,
@@ -63,7 +94,6 @@ const AdminSignUp = () => {
             <a href="/admin-login" className="auth-link">Already have an account? Login</a>
           </div>
         </div>
-        
       </div>
       <Footer />
     </div>
